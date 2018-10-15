@@ -1,0 +1,54 @@
+// 扩展程序必不可少的文件: 指明了该扩展的基本信息, json格式
+{
+  // 目前可能都是2
+  "manifest_version": 2,
+  "name": "Chrome Search Plugin",
+  "description": "划词搜索插件",
+  // 最多可以是由三个圆点分为四段的版本号，每段只能是数字, 不能以0开头
+  "version": "1.0.0",
+  "author": "blank.nie",
+  // 扩展相关图标文件的位置，谷歌会根据需要选择合适大小的图标
+  "icons": {"16": "icon.png",
+    "48": "icon48.png",
+    "128": "icon.png" },
+  // 指定扩展的图标放在Chrome的工具栏中
+  // browser_action和page_action一般只能指定一个
+  // browser_action指定该扩展打开浏览器后就一直能用, 图标在地址栏外边
+  // page_action指定该扩展在特定网页中才能使用, 图标在地址栏里边
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "划词搜索插件"
+  },
+  // 扩展中需要在后台持续运行的部分, 不仅是js,也可以指定自己编写的html, 如果只指定了js, chrome会自己生成一个html在后台跑指定的脚本
+  "background": {
+    "page": "background.html"
+    // "scripts": ['a.js', 'b.js'...], 可以指定脚本, 数组形式, 可以指定多个
+    // 默认为true, 脚本会持续在后台运行, false时脚本只在事件活动时运行, 事件不活动时就会释放其占有的内存等资源
+    // "persistent": false
+  },
+  // 声明需要注入的文件:扩展中的文件凡是需要允许从网页可访问的,就需要在这里声明(指定本扩展在注入的目标页面上所需使用的资源的路径)
+  "web_accessible_resources": [
+    "app.js",
+    "background.js",
+    "functions.js",
+    "injection.css",
+    "injection.js",
+    "jquery-2.1.4.min.js"
+  ],
+  // 指定注入的js, css等文件, 注入时间, 匹配哪些网站
+  "content_scripts": [
+    {
+      "matches": ["https://*/*","http://*/*"],
+      "css": ["injection.css"],
+      "js": ["jquery-2.1.4.min.js","app.js", "functions.js", "injection.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  // 很重要!决定了插件可以访问的网站, 声明需要谷歌拓展API的storage权限和跨域的权限
+  "permissions": [
+    "tabs",
+    "https://*/",
+    "http://*/",
+    "storage"
+  ]
+}

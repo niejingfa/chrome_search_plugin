@@ -1,0 +1,22 @@
+-# manifest中没有设置default_popup, 则popup相关页面均没有用到(设置后点击插件图标会弹出popup页面)
+%html
+  %head
+    %meta{'http-equiv'=>"Content-Type", 'content'=>"text/html; charset=utf-8"}
+    %title 控制页面
+    %script{src: 'jquery-2.1.4.min.js'}
+    %script{src: 'app.js'}
+    %script{src: 'functions.js'}
+    %script{src: 'popup.js'}
+    %script{src: 'background.js'}
+  %body
+    %div{style: 'width: 130px;'}
+      %table{style: 'width: 100%;'}
+        %tr
+          %td
+            %a.search_bid_or_project{:href => "#", :target => "_blank", :style => 'text-decoration: none;'} 搜索公告/项目
+        %tr
+          %td
+            %a.search_firm{:href => "#", :target => "_blank", :style => 'text-decoration: none;'} 搜索公司
+        %tr
+          %td
+            %a.search_contact{:href => "#", :target => "_blank", :style => 'text-decoration: none;'} 搜索联系人

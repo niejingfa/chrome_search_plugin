@@ -1,0 +1,17 @@
+#reach-plugin-control-panel{
+    position:absolute;
+    z-index:9999;
+    width: 100px;
+    background-color: #4085dd;
+    padding:5px;
+    text-align: center;
+}
+#reach-plugin-control-panel div{
+    padding: 5px;
+}
+
+#reach-plugin-control-panel button{
+    padding: 5px;
+    font-size: 10px!important;
+    width: 90px
+}
