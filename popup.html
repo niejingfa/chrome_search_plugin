@@ -7,26 +7,18 @@
     <script src='functions.js'></script>
     <script src='popup.js'></script>
     <script src='background.js'></script>
+    <link href="popup.css" rel="stylesheet">
+    <script type="text/javascript"src="popup.js"></script>
   </head>
   <body>
-    <div style='width: 130px;'>
-      <table style='width: 100%;'>
-        <tr>
-          <td>
-            <a class='search_bid_or_project' href='#' style='text-decoration: none;' target='_blank'>搜索公告/项目</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a class='search_firm' href='#' style='text-decoration: none;' target='_blank'>搜索公司</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a class='search_contact' href='#' style='text-decoration: none;' target='_blank'>搜索联系人</a>
-          </td>
-        </tr>
-      </table>
+    <div class="search_switch">
+      <input class="search_switch-checkbox" id="onoffswitch" type="checkbox" value="false">
+      <label class="search_switch-label" for="onoffswitch">
+        <span class="search_switch-inner" data-on="ON" data-off="OFF"></span>
+        <span class="search_switch-switch"></span>
+      </label>
     </div>
   </body>
 </html>
+<!--a = chrome.management.get('dcdjnbgafinaklkiiejdlakcklpfcngd', function a(data){ console.log(data)})-->
+<!--chrome.management.setEnabled('dcdjnbgafinaklkiiejdlakcklpfcngd', false, function a(){})-->

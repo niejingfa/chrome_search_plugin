@@ -2,10 +2,10 @@
 {
   // 目前可能都是2
   "manifest_version": 2,
-  "name": "Chrome Search Plugin",
-  "description": "划词搜索插件",
+  "name": "RCC 信息划词快搜",
+  "description": "一键对信息管理系统数据进行快速搜索",
   // 最多可以是由三个圆点分为四段的版本号，每段只能是数字, 不能以0开头
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "blank.nie",
   // 扩展相关图标文件的位置，谷歌会根据需要选择合适大小的图标
   "icons": {"16": "icon.png",
@@ -17,7 +17,8 @@
   // page_action指定该扩展在特定网页中才能使用, 图标在地址栏里边
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "划词搜索插件"
+    "default_title": "RCC 信息划词快搜",
+    "default_popup": "popup.html"
   },
   // 扩展中需要在后台持续运行的部分, 不仅是js,也可以指定自己编写的html, 如果只指定了js, chrome会自己生成一个html在后台跑指定的脚本
   "background": {
@@ -33,7 +34,8 @@
     "functions.js",
     "injection.css",
     "injection.js",
-    "jquery-2.1.4.min.js"
+    "jquery-2.1.4.min.js",
+    "data.json"
   ],
   // 指定注入的js, css等文件, 注入时间, 匹配哪些网站
   "content_scripts": [
@@ -49,6 +51,7 @@
     "tabs",
     "https://*/",
     "http://*/",
-    "storage"
+    "storage",
+    "management"
   ]
 }

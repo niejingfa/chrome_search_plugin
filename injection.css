@@ -1,10 +1,10 @@
 #reach-plugin-control-panel{
     position:absolute;
-    z-index:9999;
-    width: 100px;
-    background-color: #4085dd;
-    padding:5px;
     text-align: center;
+    z-index: 99999; 
+    background-color: rgba(255,255,255,1);
+    display: none;
+    border: 3px solid Gainsboro;
 }
 #reach-plugin-control-panel div{
     padding: 5px;
@@ -12,6 +12,33 @@
 
 #reach-plugin-control-panel button{
     padding: 5px;
-    font-size: 10px!important;
-    width: 90px
+    font-size: 14px!important;
+    width: 90px;
+}
+#reach-plugin-control-panel li:hover{
+    background-color: #0033FF;
+    color: white;
+}
+
+#reach-plugin-control-panel li {
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+#reach-plugin-control-panel li select{
+    font-size: 14px;
+    
+}
+
+#reach-plugin-control-panel ul{
+    list-style: none;
+    margin-bottom: 10px;
+    padding-inline-start: 0;
+    margin: 1em;
+}
+#reach-plugin-control-panel hr{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 0;
+    border-top: 1px solid black;
 }

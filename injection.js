@@ -10,4 +10,9 @@
 
   init_control_panel();
 
+  // 改变国家选项
+  function change_country(value){
+    console.log(value);
+  }
+
 }).call(this);
